@@ -2,9 +2,9 @@
   "name": "misclub-blockchain-workshop",
   "version": "1.0.0",
   "description": "Code for the MIS Club Blockchain REST Service workshop on February 23rd, 2018. Co-hosted with HackISU.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

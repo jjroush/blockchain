@@ -81,5 +81,5 @@ app.get('/nodes/resolve', async (req, res) => {
 	res.status(200).json(response);
 });
 
-const port = 3001;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`App listening on port ${port}!`));
