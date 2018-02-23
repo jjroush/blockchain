@@ -68,7 +68,7 @@ class Blockchain {
 		}
 	}
 
-	validChain(chain) {
+	static validChain(chain) {
 		let lastBlock = chain[0];
 		let currentIndex = 1;
 
@@ -113,7 +113,7 @@ class Blockchain {
 
 	getNeighborChain(node) {
 		return new Promise((resolve, reject) => {
-			const response = http.get(`http://${node}/chain`, res => {
+			http.get(`http://${node}/chain`, res => {
 				if (res.statusCode === 200) {
 					res.setEncoding('utf8');
 					let rawData = '';

@@ -14,7 +14,7 @@ app.get('/mine', (req, res) => {
 	const lastProof = lastBlock.proof;
 	const proof = blockchain.proofOfWork(lastProof);
 
-	blockchain.newTransaction({sender: "0", recipient: nodeIdentifier, amount: 1});
+	blockchain.newTransaction({sender: '0', recipient: nodeIdentifier, amount: 1});
 
 	const previousHash = Blockchain.hash(lastBlock);
 	const block = blockchain.newBlock({proof, previousHash});
