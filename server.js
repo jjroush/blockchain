@@ -3,6 +3,7 @@ const express = require('express'),
 	bodyParser = require('body-parser'),
 	uuid = require('uuid4'),
 	Blockchain = require('./blockchain');
+	const getPort = require('get-port');
 
 const nodeIdentifier = uuid();
 const blockchain = new Blockchain();
@@ -81,5 +82,6 @@ app.get('/nodes/resolve', async (req, res) => {
 	res.status(200).json(response);
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`App listening on port ${port}!`));
+const port = getPort().then(port =>
+app.listen(port, () => console.log(`App listening on port ${port}!`)));
+
